@@ -19,7 +19,8 @@ export class AuthService {
 
   get isAuth() {
     if(!this.token){
-      this.token =this.cookieService.get('token');
+      this.token = this.cookieService.get('token');
+      this.refreshToken = this.cookieService.get('refreshToken');
     }
     return !!this.token;
   }
@@ -35,28 +36,20 @@ export class AuthService {
       fd,
     ).pipe(
       tap(val => {
-        this.token = val.access_token
-        this.refreshToken = val.refresh_token
-
-        this.cookieService.set('token', this.token);
-        this.cookieService.set('refreshToken', this.refreshToken);
+        this.savetoken(val)
       })
     )
   }
 
   refreshAuthToken() {
     return this.http.post<TokenResponse>(
-      `${this.baseApiUrl}token/refresh`,
+      `${this.baseApiUrl}refresh`,
       {
         refresh_token: this.refreshToken
       }
     ).pipe(
-      tap(res => {
-        this.token = val.access_token
-        this.refreshToken = val.refresh_token
-
-        this.cookieService.set('token', this.token);
-        this.cookieService.set('refreshToken', this.refreshToken);
+      tap(val => {
+        this.savetoken(val)
       }),
       catchError(err => {
         this.logout()

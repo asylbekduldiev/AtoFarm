@@ -15,7 +15,7 @@ export class LayoutComponent {
   ngOnInit() {
     console.log("ngOnInit")
     this.profileService.getMe().subscribe(res => {
-      
+      console.log(res)
     })
   }
 }
