@@ -1,18 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'svg[icon]',
   standalone: true,
-  template: `
-    <svg>
-      <use [attr.xlink:href]="href"></use>
-    </svg>
-  `,
+  imports: [],
+  template: '<svg:use [attr.href]="href"></svg:use>',
 })
 export class SvgIconComponent {
-  @Input() icon = "";
+  @Input() icon = '';
 
   get href() {
-    return `assets/svg/${this.icon}.svg#${this.icon}`;
+    return `/public/assets/svg/${this.icon}.svg#${this.icon}`;
   }
 }

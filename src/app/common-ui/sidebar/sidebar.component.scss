@@ -32,4 +32,11 @@
         background: var(--dark-hover-color);
         color: var(--primary-color);
     }
+    &:hover .icon-home path {          
+        fill: var(--primary-color); 
+    }  
 }
+
+.icon-home path {  
+    fill: var(--light-color); 
+} 
