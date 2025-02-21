@@ -16,7 +16,7 @@
     background: none;
     color: var(--light-color);
     display: grid;
-    grid-template-columns: 16px 1fr max max-content;
+    grid-template-columns: 16px 1fr max-content;
     align-items: center;
     grid-gap: 12px;
     font-weight: 700;
@@ -32,11 +32,4 @@
         background: var(--dark-hover-color);
         color: var(--primary-color);
     }
-    &:hover .icon-home path {          
-        fill: var(--primary-color); 
-    }  
 }
-
-.icon-home path {  
-    fill: var(--light-color); 
-} 

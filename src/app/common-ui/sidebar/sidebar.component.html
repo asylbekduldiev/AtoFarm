@@ -5,12 +5,10 @@
 
 <nav>
     <ul class="main-menu-list">
-        <li>
+        <li *ngFor="let menuItem of menuItems">
             <button class="menu-item">
-                <svg width="14" height="12" viewBox="0 0 14 12" class="icon-home" style="--icon-color: white;">  
-                    <path d="M5.65625 11.3438H2.34375V6H0.34375L7 0L13.6562 6H11.6562V11.3438H8.34375V7.34375H5.65625V11.3438Z" fill="var(--light-color)"/>  
-                </svg>
-                <span>Моя страница</span>
+                <svg-icon [icon]="menuItem.icon"></svg-icon>
+                <span>{{menuItem.label}}</span>
             </button>
         </li>
     </ul>
