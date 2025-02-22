@@ -7,10 +7,14 @@
     <ul class="main-menu-list">
         <li *ngFor="let menuItem of menuItems">
             <button class="menu-item">
-                <svg-icon [icon]="menuItem.icon"></svg-icon>
+                <svg [icon]="menuItem.icon" widht="16" height="16"></svg>
                 <span>{{menuItem.label}}</span>
             </button>
         </li>
     </ul>
 </nav>
+
+<p class="medium-text mt32">Подписчики</p>
+
+<app-subscriber-card></app-subscriber-card>
     

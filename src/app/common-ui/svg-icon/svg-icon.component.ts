@@ -2,16 +2,16 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'svg-icon',
+  selector: 'svg[icon]',
   standalone: true,
-  imports: [CommonModule],
-  template: `<svg class="svg-icon" width="16" height="16" style="fill: red;"><use [attr.xlink:href]="href"></use></svg>`,
-  encapsulation: ViewEncapsulation.None
+  imports: [],
+  template: '<svg:use [attr.href]="href" ></svg:use>',
 })
 export class SvgIconComponent {
   @Input() icon = '';
+  // @Input() size = 24; 
 
   get href(): string {
-    return `assets/svg/sprite.svg#${this.icon}`;
+    return `/assets/svg/${this.icon}.svg#${this.icon}`;
   }
 }
