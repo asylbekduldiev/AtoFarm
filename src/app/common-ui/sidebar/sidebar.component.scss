@@ -49,4 +49,11 @@
 .to-subscribers-link{
     color: var(--primary-color);
     text-decoration: none;
+    align-items: center;
+    display: flex;
+}
+
+.to-subscribers-icon{
+    width: 16px;
+    height: 16px;
 }

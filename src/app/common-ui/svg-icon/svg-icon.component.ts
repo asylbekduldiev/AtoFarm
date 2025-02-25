@@ -9,7 +9,6 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 })
 export class SvgIconComponent {
   @Input() icon = '';
-  // @Input() size = 24; 
 
   get href(): string {
     return `/assets/svg/${this.icon}.svg#${this.icon}`;
